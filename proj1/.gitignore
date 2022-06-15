@@ -31,7 +31,6 @@
 # Executables
 *.exe
 # *.out
-a.out
 *.app
 *.i*86
 *.x86_64
@@ -42,6 +41,7 @@ a.out
 *.su
 *.idb
 *.pdb
+a.out
 vgcore.*
 
 # Kernel Module Compile Results
@@ -252,6 +252,3 @@ $RECYCLE.BIN/
 # lab13 program
 server_basic server_process
 **/*._sobel.bmp
-
-# Others
-.vscode
