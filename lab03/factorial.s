@@ -1,7 +1,7 @@
 .globl factorial
 
 .data
-n: .word 8
+n: .word 10 # fac(n)
 
 .text
 main:
@@ -22,3 +22,16 @@ main:
 
 factorial:
     # YOUR CODE HERE
+    li t0, 1
+    beq a0, t0, break # End when n == 1
+    addi sp, sp, -8
+    sw ra, 4(sp)    # push ra
+    sw a0, 0(sp)    # push a0
+    addi a0, a0, -1
+    jal ra, factorial   # fac(n-1)
+    lw t0, 0(sp)    # pop a0
+    mul a0, a0, t0
+    lw ra, 4(sp)    # pop ra
+    addi sp, sp, 8
+break:
+    ret
